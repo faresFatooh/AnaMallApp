@@ -90,7 +90,7 @@ class SearchFragment : Fragment() {
             }
 
     }
-
+//
     private class RecyclerAdapter : RecyclerView.Adapter<RecyclerAdapter.ViewHolder>() {
         var list = arrayListOf<String>("Mall", "Restaurant")
         var sharedPreference: SharedPreferences? = null

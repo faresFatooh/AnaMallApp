@@ -9,7 +9,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -17,7 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.munche.R;
+import com.mall.anamall.R;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
@@ -57,7 +56,7 @@ public class FavouriteFragment extends Fragment {
         uid = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid();
         ImageView mGoBackBtn = view.findViewById(R.id.cartBackBtn);
         mGoBackBtn.setOnClickListener(view -> {
-            Fragment fragment = new RestaurantFragment();
+            Fragment fragment = new MallsFragment();
             FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
             fragmentTransaction.replace(R.id.fragmentContainer, fragment);

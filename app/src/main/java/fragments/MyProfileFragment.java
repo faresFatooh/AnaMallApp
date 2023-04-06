@@ -1,6 +1,7 @@
 package fragments;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -16,8 +17,7 @@ import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
 import ui.order.OrdersActivity;
-import com.example.munche.R;
-import com.google.android.gms.tasks.OnSuccessListener;
+import com.mall.anamall.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -32,7 +32,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-import ui.location.ChangeLocationActivity;
+//import ui.location.ChangeLocationActivity;
 import ui.auth.LoginActivity;
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -63,7 +63,7 @@ public class MyProfileFragment extends Fragment implements View.OnClickListener 
         view = inflater.inflate(R.layout.fragment_my_profile, container, false);
 
         init();
-        getUserInfo();
+        getUserInfo(requireContext());
         mLogOutText.setOnClickListener(this);
         mMyOrdersText.setOnClickListener(this);
         mUserProfileImage.setOnClickListener(this);
@@ -88,7 +88,7 @@ public class MyProfileFragment extends Fragment implements View.OnClickListener 
         mUserRef = db.collection("UserList").document(uid);
     }
 
-    private void getUserInfo() {
+    private void getUserInfo(Context context) {
         mUserRef.get().addOnCompleteListener(task -> {
             if (task.isSuccessful()){
                 DocumentSnapshot docRef = task.getResult();
@@ -96,7 +96,7 @@ public class MyProfileFragment extends Fragment implements View.OnClickListener 
                 String userName = (String) docRef.get("name");
                 String userPhoneNum = (String) docRef.get("phonenumber");
                 String userAddress = (String) docRef.get("address");
-                Glide.with(requireActivity())
+                Glide.with(context)
                         .load(imageRef)
                         .placeholder(R.drawable.user_placeholder)
                         .into(mUserProfileImage);
@@ -138,9 +138,9 @@ public class MyProfileFragment extends Fragment implements View.OnClickListener 
                 break;
 
             case R.id.changeAddressImage:
-                Intent intent1 = new Intent(getActivity(), ChangeLocationActivity.class);
-                intent1.putExtra("INT", "THREE");
-                startActivity(intent1);
+//                Intent intent1 = new Intent(getActivity(), ChangeLocationActivity.class);
+//                intent1.putExtra("INT", "THREE");
+//                startActivity(intent1);
                 break;
 
         }

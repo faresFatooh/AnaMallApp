@@ -1,16 +1,15 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
-apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 33
     buildToolsVersion "29.0.3"
 
     defaultConfig {
-        applicationId "com.example.munche"
+        applicationId "com.mall.anamall"
         minSdkVersion 21
-        targetSdkVersion 30
+        targetSdkVersion 33
         versionCode 1
         versionName "1.0"
 
@@ -27,6 +26,11 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+
+        buildFeatures {
+            viewBinding = true
+
     }
 
 }
@@ -62,7 +66,6 @@ dependencies {
     //External Libraries
     implementation 'com.github.aabhasr1:OtpView:v1.1.2' //OTP
     implementation 'com.hbb20:ccp:2.4.0' //Country Code Picker
-    implementation 'com.google.android.material:material:1.4.0' //Material
     implementation 'com.jakewharton:butterknife:10.2.1'//Binding
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.1'
     implementation 'com.github.bumptech.glide:glide:4.12.0' //Glide Image Loading
@@ -74,13 +77,18 @@ dependencies {
     implementation('com.paytm:pgplussdk:1.4.4') {//Paytm Gateway Integration
         transitive = true;
     }
-    implementation 'com.mapbox.mapboxsdk:mapbox-android-sdk:9.2.0'//MapBox
-    implementation 'com.mapbox.mapboxsdk:mapbox-android-navigation:0.42.6'//MapBox Navigation
+//    implementation 'com.mapbox.mapboxsdk:mapbox-android-sdk:9.2.0'//MapBox
+//    implementation 'com.mapbox.mapboxsdk:mapbox-android-navigation:7.0.0'//MapBox Navigation
     implementation 'androidx.annotation:annotation:1.2.0'
     implementation 'ir.samanjafari.easycountdowntimer:easycountdowntimer:2.5.0'//Countdown Timer
     implementation 'com.myhexaville:smart-image-picker:1.0.4' //ImagePicker
     implementation 'de.hdodenhof:circleimageview:3.1.0'//CircleImageView
     implementation 'com.github.sujithkanna:smileyrating:2.0.0'//Smiley Rating Bar
+    implementation 'nl.joery.animatedbottombar:library:1.1.0'
+
+    implementation 'com.google.android.material:material:1.0.0-alpha1'
+    implementation 'com.afollestad.material-dialogs:core:0.9.6.0'
+    implementation 'com.balysv.materialmenu:material-menu:2.0.0'
 
 }
 apply plugin: 'com.google.gms.google-services'

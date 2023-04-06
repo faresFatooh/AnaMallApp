@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">انا مول</string>
+    <string name="getStarted">لنبدأ</string>
+    <string name="descLogin">أدخل رقم هاتفك وسنرسل لك OTP للتحقق من هويتك.</string>
+</resources>

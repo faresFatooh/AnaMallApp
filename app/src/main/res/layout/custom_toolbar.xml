@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.Toolbar
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/customToolBar"
-    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
     app:contentInsetLeft="0dp"
     app:contentInsetStart="0dp">
@@ -15,47 +14,64 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="5dp">
 
+        <ru.nikartm.support.ImageBadgeView
+            android:id="@+id/imageBadgeView2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/ic_baseline_menu_24"
+            app:ibv_badgeColor="@color/colorPrimary"
+            app:ibv_badgePosition="top_right"
+            app:ibv_badgeTextColor="#ffffff"
+            app:ibv_badgeTextSize="9sp"
+            app:ibv_badgeTextStyle="bold"
+            app:ibv_fixedBadgeRadius="7dp"
+            app:ibv_maxBadgeValue="99" />
+
         <LinearLayout
+            android:id="@+id/addressContainer"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:id="@+id/addressContainer">
+            android:layout_marginStart="3dp"
+            android:layout_toEndOf="@+id/imageBadgeView2"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/userLocationNickName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Delivering To"
-                android:textSize="20sp"
                 android:fontFamily="@font/open_sans_semibold"
-                android:textColor="@color/colorAccent"/>
+                android:text="Delivering To"
+                android:textColor="@color/colorAccent"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/userLocation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="getting location ..."
                 android:fontFamily="@font/open_sans"
+                android:maxLength="40"
+                android:text="getting location ..."
                 android:textColor="@color/gray"
-                android:textSize="14sp"/>
+                android:textSize="14sp" />
 
         </LinearLayout>
 
         <ru.nikartm.support.ImageBadgeView
             android:id="@+id/imageBadgeView"
-            android:layout_width="27dp"
-            android:layout_height="27dp"
-            android:src="@drawable/cart_icon"
-            android:layout_centerVertical="true"
+            android:layout_width="33dp"
+            android:layout_height="33dp"
             android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
             android:layout_marginEnd="21dp"
-            app:ibv_badgeTextSize="9sp"
-            app:ibv_fixedBadgeRadius="7dp"
-            app:ibv_badgeTextStyle="bold"
-            app:ibv_badgeTextColor="#ffffff"
+            android:src="@drawable/carts"
             app:ibv_badgeColor="@color/colorPrimary"
             app:ibv_badgePosition="top_right"
-            app:ibv_maxBadgeValue="99"/>
+            app:ibv_badgeTextColor="#ffffff"
+            app:ibv_badgeTextSize="9sp"
+            app:ibv_badgeTextStyle="bold"
+            app:ibv_fixedBadgeRadius="7dp"
+            app:ibv_maxBadgeValue="99" />
 
     </RelativeLayout>
 

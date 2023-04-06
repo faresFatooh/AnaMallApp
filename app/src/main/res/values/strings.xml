@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Munche</string>
+    <string name="app_name">Ana Mall</string>
     <string name="getStarted">Get Started</string>
     <string name="descLogin">Enter your phone number and we will send you an OTP to verify you.</string>
     <string name="descMobile">Mobile No.</string>
@@ -13,7 +13,7 @@
     <string name="userNum">Enter the OTP sent to</string>
     <string name="moreYourself">Tell us a bit more about Yourself</string>
     <string name="logOutText">Log Out</string>
-    <string name="trending">Trending</string>
+    <string name="trending">Our Partners</string>
     <string name="or">or</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="your_cart_is_empty">Your cart is empty</string>
@@ -23,4 +23,8 @@
     <string name="write_a_review">Write a review</string>
     <string name="review_hint">Write your thoughts about the restaurant</string>
     <string name="search_restaurants">Search Restaurants</string>
+    <string name="restaurant">restaurant</string>
+    <string name="supermarket">supermarket</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
 </resources>

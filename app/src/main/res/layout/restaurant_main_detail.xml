@@ -78,7 +78,7 @@
                 android:layout_marginStart="11dp"
                 android:layout_marginTop="4dp"
                 android:text="\u20B9200 per person | "
-                android:textSize="13sp"
+                android:textSize="12sp"
                 android:textColor="@color/gray"
                 android:fontFamily="@font/open_sans"/>
 
@@ -89,7 +89,7 @@
                 android:text="45 Mins"
                 android:layout_below="@+id/ratingBar"
                 android:layout_toEndOf="@+id/average_price"
-                android:textSize="13sp"
+                android:textSize="12sp"
                 android:layout_marginTop="4dp"
                 android:fontFamily="@font/open_sans"
                 android:textColor="@color/gray"

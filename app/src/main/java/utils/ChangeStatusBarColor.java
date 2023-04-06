@@ -10,7 +10,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
-import com.example.munche.R;
+import com.mall.anamall.R;
 
 /**
  * Created by Aditya Verma on 25-06-2020

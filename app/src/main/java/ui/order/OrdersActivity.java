@@ -11,13 +11,12 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.munche.R;
+import com.mall.anamall.R;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
@@ -50,7 +49,7 @@ public class OrdersActivity extends AppCompatActivity {
         fetchOrderedItems();
 
     }
-    
+
     private void init() {
         uid = Objects.requireNonNull(FirebaseAuth.getInstance().getCurrentUser()).getUid();
         db = FirebaseFirestore.getInstance();

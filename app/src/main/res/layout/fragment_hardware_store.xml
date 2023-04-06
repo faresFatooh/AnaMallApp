@@ -1,0 +1,68 @@
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="fragments.HardwareStoreFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include layout="@layout/custom_toolbar"
+            android:id="@+id/toolBar4"/>
+
+        <TextView
+            android:id="@+id/cuisineTextLabel4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="For you"
+            android:fontFamily="@font/open_sans_semibold"
+            android:layout_below="@+id/toolBar4"
+            android:layout_marginStart="12dp"
+            android:textSize="21sp"
+            android:textColor="@color/colorAccent"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/cuisineGridView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cuisineTextLabel4"
+            android:layout_marginTop="7dp"
+            android:overScrollMode="never"
+            android:numColumns="3"
+            android:verticalSpacing="1dp"
+            android:horizontalSpacing="1dp"/>
+
+        <TextView
+            android:id="@+id/trendingTextView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/trending"
+            android:layout_below="@+id/cuisineGridView4"
+            android:layout_marginTop="21dp"
+            android:layout_marginStart="12dp"
+            android:textColor="@color/colorAccent"
+            android:fontFamily="@font/open_sans_bold"
+            android:textSize="23sp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/restaurant_recyclerView4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/trendingTextView4"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="7dp"
+            android:clipToPadding="false"
+
+            android:overScrollMode="never"
+            android:paddingStart="12dp"
+            android:paddingEnd="23dp" />
+
+    </RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>
+

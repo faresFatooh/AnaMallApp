@@ -27,7 +27,7 @@
             android:layout_height="60dp"
             android:layout_gravity="bottom"
 
-            android:backgroundTint="#F97911"
+            android:backgroundTint="#F29100"
             app:contentInsetStart="0dp"
             app:fabAlignmentMode="center"
             app:fabCradleMargin="8dp"
@@ -52,11 +52,11 @@
             android:id="@+id/fab"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="#2FCAAB"
+            android:backgroundTint="#F02B17"
             android:contentDescription="content_description_fab"
             android:src="@drawable/ic_baseline_search_24"
-            app:layout_anchor="@id/bottom_app_bar"
             app:borderWidth="0dp"
+            app:layout_anchor="@id/bottom_app_bar"
             app:rippleColor="#2FCAAB" />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
     <com.google.android.material.navigation.NavigationView

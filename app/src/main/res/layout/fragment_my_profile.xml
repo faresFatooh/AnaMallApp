@@ -41,10 +41,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/userProfileAddressText"
-        android:layout_marginTop="3dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/open_sans"
-        android:textSize="14sp"
-        android:textColor="@color/gray"/>
+        android:textColor="@color/gray"
+        android:textSize="14sp" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/userProfileImage"
@@ -58,40 +58,40 @@
         android:id="@+id/dottedDivider"
         android:layout_width="match_parent"
         android:layout_height="5dp"
-        android:src="@drawable/dotted_divider"
-        android:layerType="software"
         android:layout_below="@id/userProfileImage"
-        android:layout_marginTop="17dp"
-        android:layout_marginBottom="11dp"/>
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="11dp"
+        android:layerType="software"
+        android:src="@drawable/dotted_divider" />
 
     <LinearLayout
         android:id="@+id/settingsContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/dottedDivider"
         android:orientation="horizontal"
-        android:weightSum="3"
-        android:layout_below="@+id/dottedDivider">
+        android:weightSum="3">
 
         <ImageView
             android:id="@+id/myOrdersImage"
             android:layout_width="0dp"
             android:layout_height="32dp"
-            android:src="@drawable/orders"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:src="@drawable/orders" />
 
         <ImageView
             android:id="@+id/changeAddressImage"
             android:layout_width="0dp"
             android:layout_height="32dp"
-            android:src="@drawable/address_book"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:src="@drawable/address_book" />
 
         <ImageView
             android:id="@+id/editProfile"
             android:layout_width="0dp"
             android:layout_height="32dp"
-            android:src="@drawable/edit_profile"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:src="@drawable/edit_profile" />
 
     </LinearLayout>
 

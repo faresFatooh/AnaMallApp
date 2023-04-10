@@ -16,6 +16,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
+
+import ui.location.ChangeLocationActivity;
 import ui.order.OrdersActivity;
 import com.mall.anamall.R;
 import com.google.firebase.auth.FirebaseAuth;
@@ -138,9 +140,9 @@ public class MyProfileFragment extends Fragment implements View.OnClickListener 
                 break;
 
             case R.id.changeAddressImage:
-//                Intent intent1 = new Intent(getActivity(), ChangeLocationActivity.class);
-//                intent1.putExtra("INT", "THREE");
-//                startActivity(intent1);
+                Intent intent1 = new Intent(getActivity(), ChangeLocationActivity.class);
+                intent1.putExtra("INT", "THREE");
+                startActivity(intent1);
                 break;
 
         }

@@ -2,29 +2,29 @@
     <string name="app_name">Ana Mall</string>
     <string name="getStarted">Get Started</string>
     <string name="descLogin">Enter your phone number and we will send you an OTP to verify you.</string>
-    <string name="descMobile">Mobile No.</string>
-    <string name="mobileHint">Phone Number *</string>
-    <string name="loginBtnText">Send OTP</string>
-    <string name="ctnwithfb">Continue with Facebook</string>
-    <string name="ctnwithgoogle">Continue with Google</string>
-    <string name="ctnwithemail">Continue with Email</string>
-    <string name="termsandconditions">By Continuing. you agree to our terms of Service Privacy Policy and Content Policy</string>
-    <string name="textOtpVer">OTP Verification</string>
-    <string name="userNum">Enter the OTP sent to</string>
-    <string name="moreYourself">Tell us a bit more about Yourself</string>
-    <string name="logOutText">Log Out</string>
-    <string name="trending">Our Partners</string>
-    <string name="or">or</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="your_cart_is_empty">Your cart is empty</string>
-    <string name="choose_your_payment_method">Choose Your Payment Method</string>
-    <string name="your_orders">Your Orders</string>
-    <string name="mapbox_access_token">REPLACE WITH YOUR OWN MAPBOX TOKEN</string>
-    <string name="write_a_review">Write a review</string>
-    <string name="review_hint">Write your thoughts about the restaurant</string>
-    <string name="search_restaurants">Search Restaurants</string>
-    <string name="restaurant">restaurant</string>
-    <string name="supermarket">supermarket</string>
-    <string name="open">open</string>
-    <string name="close">close</string>
+    <string name="descMobile" translatable="false">Mobile No.</string>
+    <string name="mobileHint" translatable="false">Phone Number *</string>
+    <string name="loginBtnText" translatable="false">Send OTP</string>
+    <string name="ctnwithfb" translatable="false">Continue with Facebook</string>
+    <string name="ctnwithgoogle" translatable="false">Continue with Google</string>
+    <string name="ctnwithemail" translatable="false">Continue with Email</string>
+    <string name="termsandconditions" translatable="false">By Continuing. you agree to our terms of Service Privacy Policy and Content Policy</string>
+    <string name="textOtpVer" translatable="false">OTP Verification</string>
+    <string name="userNum" translatable="false">Enter the OTP sent to</string>
+    <string name="moreYourself" translatable="false">Tell us a bit more about Yourself</string>
+    <string name="logOutText" translatable="false">Log Out</string>
+    <string name="trending" translatable="false">Our Partners</string>
+    <string name="or" translatable="false">or</string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="your_cart_is_empty" translatable="false">Your cart is empty</string>
+    <string name="choose_your_payment_method" translatable="false">Choose Your Payment Method</string>
+    <string name="your_orders" translatable="false">Your Orders</string>
+    <string name="mapbox_access_token" translatable="false">sk.eyJ1IjoiYWJlZG11cnRhamEiLCJhIjoiY2xnOHU5aXQzMHNreTNxcGM3aXFndHd6dCJ9.RKaZomimEzRYLCxnQC0DLg</string>
+    <string name="write_a_review" translatable="false">Write a review</string>
+    <string name="review_hint" translatable="false">Write your thoughts about the restaurant</string>
+    <string name="search_restaurants" translatable="false">Search Restaurants</string>
+    <string name="restaurant" translatable="false">restaurant</string>
+    <string name="supermarket" translatable="false">supermarket</string>
+    <string name="open" translatable="false">open</string>
+    <string name="close" translatable="false">close</string>
 </resources>

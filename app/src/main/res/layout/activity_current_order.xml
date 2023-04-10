@@ -11,14 +11,14 @@
     <include layout="@layout/custom_current_order_toolbar"
         android:id="@+id/currentOrderToolBar"/>
 
-<!--    <com.mapbox.mapboxsdk.maps.MapView-->
-<!--        android:id="@+id/mapView"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:layout_above="@+id/orderTimerContainer"-->
-<!--        android:layout_below="@id/currentOrderToolBar"-->
-<!--        android:layout_marginBottom="0dp"-->
-<!--        mapbox:mapbox_cameraZoom="12" />-->
+    <com.mapbox.mapboxsdk.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/orderTimerContainer"
+        android:layout_below="@id/currentOrderToolBar"
+        android:layout_marginBottom="0dp"
+        mapbox:mapbox_cameraZoom="12" />
 
             <RelativeLayout
                 android:id="@+id/orderTimerContainer"
@@ -35,7 +35,7 @@
                     android:layout_marginStart="21dp"
                     android:text="ARRIVING IN"
                     android:fontFamily="@font/open_sans"
-                    android:textColor="@color/grey"
+                    android:textColor="@color/gray"
                     android:textSize="13sp"/>
 
                 <ir.samanjafari.easycountdowntimer.EasyCountDownTextview
@@ -47,7 +47,7 @@
                     app:digitBackground="@color/white"
                     app:textColor="@color/gray"
                     app:setAnimation="true"
-                    app:colonColor="@color/grey"
+                    app:colonColor="@color/gray"
                     app:showDays="false"
                     android:layout_below="@+id/arrivingInId"
                     android:layout_marginTop="3dp"

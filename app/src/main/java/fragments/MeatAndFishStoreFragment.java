@@ -9,6 +9,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -81,7 +82,7 @@ public class MeatAndFishStoreFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_meat_and_fish_store, container, false);
         init(view);
         DrawerLayout btn = getActivity().findViewById(R.id.drawer_layout2);
-        btn.closeDrawer(Gravity.LEFT);
+        btn.closeDrawer(GravityCompat.START);
 
         fetchLocation(view);
         getItemsInCartNo();
@@ -116,7 +117,7 @@ public class MeatAndFishStoreFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 DrawerLayout btn = getActivity().findViewById(R.id.drawer_layout2);
-                btn.openDrawer(Gravity.LEFT);
+                btn.openDrawer(GravityCompat.START);
             }
         });
 

@@ -20,22 +20,31 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
+        <activity
+            android:name="ui.order.CurrentOrderActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name="ui.location.ChangeLocationActivity"
+            android:windowSoftInputMode="adjustPan"></activity>
         <activity android:name="ui.review.NewReviewActivity" />
         <activity android:name="ui.review.ReviewsActivity" />
         <activity
             android:name="com.mall.anamall.SplashActivity"
-            android:theme="@style/SplashTheme"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-<!--        <activity-->
-<!--            android:name=".ChangeLocationActivity"-->
-<!--            android:windowSoftInputMode="adjustPan" />-->
-<!--        <activity android:name="ui.order.CurrentOrderActivity" />-->
+        </activity> <!-- <activity -->
+        <!-- android:name=".ChangeLocationActivity" -->
+        <!-- android:windowSoftInputMode="adjustPan" /> -->
+        <!-- <activity android:name="ui.order.CurrentOrderActivity" /> -->
         <activity android:name="ui.order.OrdersActivity" />
         <activity android:name="ui.order.OrderSuccessfulActivity" />
         <activity android:name="ui.order.CheckoutActivity" />

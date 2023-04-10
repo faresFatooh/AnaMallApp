@@ -9,6 +9,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -84,7 +85,7 @@ public class WatchStoreFragment extends Fragment {
 
 
         DrawerLayout btn = getActivity().findViewById(R.id.drawer_layout2);
-        btn.closeDrawer(Gravity.LEFT);
+        btn.closeDrawer(GravityCompat.START);
 
         init(view);
 
@@ -121,7 +122,7 @@ public class WatchStoreFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 DrawerLayout btn = getActivity().findViewById(R.id.drawer_layout2);
-                btn.openDrawer(Gravity.LEFT);
+                btn.openDrawer(GravityCompat.START);
             }
         });
 

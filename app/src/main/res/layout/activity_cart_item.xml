@@ -130,7 +130,7 @@
             android:id="@+id/cartDivider"
             android:layout_width="match_parent"
             android:layout_height="0.2dp"
-            android:background="@color/grey"
+            android:background="@color/gray"
             android:layout_below="@+id/userDeliveryAddress"
             android:layout_marginTop="13dp"
             android:layout_marginBottom="13dp"/>
@@ -150,10 +150,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/totAmount"
+            android:layout_alignStart="@+id/totAmount"
+            android:layout_marginStart="0dp"
             android:layout_marginTop="1dp"
-            android:text="You Save: "
             android:fontFamily="@font/open_sans_semibold"
-            android:textColor="@color/colorAccent"/>
+            android:text="You Save: "
+            android:textColor="@color/colorAccent" />
 
         <Button
             android:id="@+id/payAmountBtn"

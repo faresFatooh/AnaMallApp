@@ -1,5 +1,6 @@
 package ui.order;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
@@ -56,14 +57,14 @@ public class OrderSuccessfulActivity extends AppCompatActivity {
 
     private void moveToOrdersScreen() {
         new Handler().postDelayed(() -> {
-//            Intent intent = new Intent(OrderSuccessfulActivity.this, CurrentOrderActivity.class);
-//            intent.putExtra("RES_UID", resUid);
-//            startActivity(intent);
+            Intent intent = new Intent(OrderSuccessfulActivity.this, CurrentOrderActivity.class);
+            intent.putExtra("RES_UID", resUid);
+            startActivity(intent);
             mp.reset();
             mp.release();
-//            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-//            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-//            finish();
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            finish();
         }, TIME_OUT);
     }
 

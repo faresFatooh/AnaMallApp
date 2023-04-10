@@ -39,6 +39,7 @@ import java.util.Objects;
 import models.CartItemDetail;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import ui.location.ChangeLocationActivity;
 import ui.order.CheckoutActivity;
 
 public class CartItemActivity extends AppCompatActivity {
@@ -76,10 +77,10 @@ public class CartItemActivity extends AppCompatActivity {
         TextView mChangeAddressText = findViewById(R.id.changeAddressText);
         mChangeAddressText.setOnClickListener(view -> {
 
-//            Intent intent = new Intent(getApplicationContext(), ChangeLocationActivity.class);
-//            intent.putExtra("INT","TWO");
-//            startActivity(intent);
-//            finish();
+            Intent intent = new Intent(getApplicationContext(), ChangeLocationActivity.class);
+            intent.putExtra("INT","TWO");
+            startActivity(intent);
+            finish();
 
         });
         ImageView mCartBackBtn = findViewById(R.id.cartBackBtn);
@@ -144,7 +145,7 @@ public class CartItemActivity extends AppCompatActivity {
                 String itemCount = model.getItem_count();
                 holder.mQtyPicker.setNumber(itemCount);
                 int getItemPrice = Integer.parseInt(model.getSelect_price());
-                int getItemCount = Integer.parseInt(model.getItem_count());
+                int getItemCount = Integer.parseInt                                     (model.getItem_count());
                 int finalPrice = getItemPrice * getItemCount;
                 holder.mItemCartPrice.setText("₪  " + finalPrice);
 

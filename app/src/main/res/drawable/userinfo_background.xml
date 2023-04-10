@@ -7,7 +7,7 @@
 
     <corners android:radius="6dp"/>
 
-    <solid android:color="@color/transparent"/>
+    <solid android:color="@color/fui_transparent"/>
 
     <padding android:bottom="10dp"
         android:top="10dp"

@@ -4,8 +4,10 @@ package fragments;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.location.Location;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,7 +31,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.SnapHelper;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
+
 import com.mall.anamall.R;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.firebase.ui.firestore.FirestoreRecyclerOptions;
@@ -41,15 +43,24 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Query;
+import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
+import com.smarteist.autoimageslider.IndicatorView.draw.controller.DrawController;
+import com.smarteist.autoimageslider.SliderAnimations;
+import com.smarteist.autoimageslider.SliderView;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
+import adapters.SliderAdapter;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import models.RestaurantDetail;
+import models.SliderItem;
 import ru.nikartm.support.ImageBadgeView;
 import ui.cart.CartItemActivity;
 import ui.cart.EmptyCartActivity;
+import ui.location.ChangeLocationActivity;
 import ui.main.MainRestaurantPageActivity;
 
 public class RestaurantsFragment extends Fragment {
@@ -57,13 +68,16 @@ public class RestaurantsFragment extends Fragment {
     private FirebaseFirestore db;
     private String address;
 
+    SliderView sliderView;
+    int[] images = {R.drawable.mazaj,
+            R.drawable.mazaj,
+            R.drawable.mazaj};
     LinearLayoutManager linearLayoutManager;
     private RecyclerView mRestaurantRecyclerView;
     LinearLayoutManager linearLayoutManager2;
     private RecyclerView mRestaurantRecyclerView2;
     private ImageBadgeView mImageBadgeView;
     private ImageBadgeView mImageBadgeView2;
-
 
     public RestaurantsFragment() {
         // Required empty public constructor
@@ -90,16 +104,25 @@ public class RestaurantsFragment extends Fragment {
         getItemsInCartNo();
         getRestaurantDetails(requireContext());
         getRestaurantDetails2(requireContext());
+        sliderView = view.findViewById(R.id.imageSlider);
 
+        SliderAdapter sliderAdapter = new SliderAdapter(images);
+
+        sliderView.setSliderAdapter(sliderAdapter);
+        sliderView.setIndicatorAnimation(IndicatorAnimationType.WORM);
+        sliderView.setScrollTimeInSec(4); //set scroll delay in seconds :
+        sliderView.setSliderTransformAnimation(SliderAnimations.DEPTHTRANSFORMATION);
+        sliderView.startAutoCycle();
         return view;
     }
+
     private void init(View view) {
         LinearLayout mAddressContainer = view.findViewById(R.id.addressContainer);
         mAddressContainer.setOnClickListener(view1 -> {
 
-//            Intent intent = new Intent(getActivity(), ChangeLocationActivity.class);
-//            intent.putExtra("INT", "ONE");
-//            startActivity(intent);
+            Intent intent = new Intent(getActivity(), ChangeLocationActivity.class);
+            intent.putExtra("INT", "ONE");
+            startActivity(intent);
         });
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         mCurrentUser = mAuth.getCurrentUser();
@@ -107,7 +130,7 @@ public class RestaurantsFragment extends Fragment {
         Toolbar mToolbar = view.findViewById(R.id.customToolBar);
         ((AppCompatActivity) requireActivity()).setSupportActionBar(mToolbar);
         linearLayoutManager = new GridLayoutManager(getContext(), 2);
-        linearLayoutManager2 = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL,false);
+        linearLayoutManager2 = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
         mRestaurantRecyclerView = view.findViewById(R.id.restaurant_recyclerView2);
         mRestaurantRecyclerView.setLayoutManager(linearLayoutManager);
         mRestaurantRecyclerView2 = view.findViewById(R.id.cuisineGridView2);
@@ -159,6 +182,7 @@ public class RestaurantsFragment extends Fragment {
             }
         });
     }
+
 
 
     private void getRestaurantDetails(Context context) {
@@ -237,8 +261,9 @@ public class RestaurantsFragment extends Fragment {
         restaurantAdapter.notifyDataSetChanged();
         mRestaurantRecyclerView.setAdapter(restaurantAdapter);
     }
+
     private void getRestaurantDetails2(Context context) {
-        Query query = db.collection("[Restaurant]").whereEqualTo("top","Yes");
+        Query query = db.collection("[Restaurant]").whereEqualTo("top", "Yes");
         FirestoreRecyclerOptions<RestaurantDetail> menuItemModel = new FirestoreRecyclerOptions.Builder<RestaurantDetail>()
                 .setQuery(query, RestaurantDetail.class)
                 .build();
@@ -327,6 +352,7 @@ public class RestaurantsFragment extends Fragment {
             ButterKnife.bind(this, itemView);
         }
     }
+
     public static class RestaurantItemViewHolder2 extends RecyclerView.ViewHolder {
         @BindView(R.id.cuisineName)
         TextView cuisineName;

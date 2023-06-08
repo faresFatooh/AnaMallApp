@@ -181,7 +181,7 @@ public class MainRestaurantPageActivity extends AppCompatActivity {
                     holder.mItemCategory.setText(model.getCategory());
                     String specImage = String.valueOf(model.getSpecification());
                     Glide.with(Objects.requireNonNull(getApplicationContext()))
-                            .load("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjHq2OwxYlK0hykwRA_Bx9oTmuBoyM5jXjAHJaWdazH0QyGGdpjtZnyp6TI72KHOnhN0N4jN_IA6fbN2YpJhZXOhdnYHxRWzZ1STSb5tN8ZS3d4y2TgWrlf5pNtneeeW-H0ImFjFEIROpyvXcPAM2AVm_epEqK_Up2Dg2cTH2-uDAdVQ3EgNiFFlU0L/s320/%D8%B4%D8%A7%D9%8A%20%D8%A7%D9%84%D8%B9%D8%B1%D9%88%D8%B3%D8%A9.jpg").into(holder.foodSpecification);
+                            .load(model.getImage()).into(holder.foodSpecification);
                     if (!model.getSpecification().equals("0")){
                         holder.mItemPrice.setPaintFlags(holder.mItemPrice.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
                     }else {
@@ -197,7 +197,7 @@ public class MainRestaurantPageActivity extends AppCompatActivity {
                     holder.mItemCategory.setText(model.getCategory());
                     String specImage = String.valueOf(model.getSpecification());
                     Glide.with(Objects.requireNonNull(getApplicationContext()))
-                            .load("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjHq2OwxYlK0hykwRA_Bx9oTmuBoyM5jXjAHJaWdazH0QyGGdpjtZnyp6TI72KHOnhN0N4jN_IA6fbN2YpJhZXOhdnYHxRWzZ1STSb5tN8ZS3d4y2TgWrlf5pNtneeeW-H0ImFjFEIROpyvXcPAM2AVm_epEqK_Up2Dg2cTH2-uDAdVQ3EgNiFFlU0L/s320/%D8%B4%D8%A7%D9%8A%20%D8%A7%D9%84%D8%B9%D8%B1%D9%88%D8%B3%D8%A9.jpg").into(holder.foodSpecification);
+                            .load(model.getImage()).into(holder.foodSpecification);
                     if (!model.getSpecification().equals("0")){
                         holder.mItemPrice.setPaintFlags(holder.mItemPrice.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
                     }else {

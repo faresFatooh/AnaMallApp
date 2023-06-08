@@ -31,8 +31,10 @@ import androidx.recyclerview.widget.SnapHelper;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 
+import adapters.SliderAdapter;
 import ui.cart.CartItemActivity;
 import ui.cart.EmptyCartActivity;
+import ui.location.ChangeLocationActivity;
 import ui.main.MainRestaurantPageActivity;
 
 import com.mall.anamall.R;
@@ -46,6 +48,9 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.Query;
+import com.smarteist.autoimageslider.IndicatorView.animation.type.IndicatorAnimationType;
+import com.smarteist.autoimageslider.SliderAnimations;
+import com.smarteist.autoimageslider.SliderView;
 
 import java.util.Objects;
 
@@ -60,7 +65,10 @@ public class MallsFragment extends Fragment {
     private FirebaseUser mCurrentUser;
     private FirebaseFirestore db;
     private String address;
-
+    SliderView sliderView;
+    int[] images = {R.drawable.upi_logo,
+            R.drawable.empty_cart_image,
+            R.drawable.cash_icon};
     LinearLayoutManager linearLayoutManager;
     private RecyclerView mRestaurantRecyclerView;
     LinearLayoutManager linearLayoutManager2;
@@ -87,7 +95,15 @@ public class MallsFragment extends Fragment {
             getRestaurantDetails(requireContext());
             getRestaurantDetails2(requireContext());
         }
+        sliderView = view.findViewById(R.id.imageSlider2);
 
+        SliderAdapter sliderAdapter = new SliderAdapter(images);
+
+        sliderView.setSliderAdapter(sliderAdapter);
+        sliderView.setIndicatorAnimation(IndicatorAnimationType.WORM);
+        sliderView.setScrollTimeInSec(4); //set scroll delay in seconds :
+        sliderView.setSliderTransformAnimation(SliderAnimations.DEPTHTRANSFORMATION);
+        sliderView.startAutoCycle();
         return view;
     }
     private void init(View view) {
@@ -101,9 +117,9 @@ public class MallsFragment extends Fragment {
             LinearLayout mAddressContainer = view.findViewById(R.id.addressContainer);
             mAddressContainer.setOnClickListener(view1 -> {
 
-//            Intent intent = new Intent(getActivity(), ChangeLocationActivity.class);
-//            intent.putExtra("INT", "ONE");
-//            startActivity(intent);
+            Intent intent = new Intent(getActivity(), ChangeLocationActivity.class);
+            intent.putExtra("INT", "ONE");
+            startActivity(intent);
             });
             FirebaseAuth mAuth = FirebaseAuth.getInstance();
             mCurrentUser = mAuth.getCurrentUser();

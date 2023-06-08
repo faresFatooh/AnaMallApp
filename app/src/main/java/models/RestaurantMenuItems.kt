@@ -9,6 +9,7 @@ public class RestaurantMenuItems {
     private var is_added: String = ""
     private var description: String = ""
     private var call: String = ""
+    private var image: String = ""
 
     constructor(
         name: String,
@@ -18,6 +19,7 @@ public class RestaurantMenuItems {
         is_active: String,
         is_added: String,
         description: String,
+        image: String,
         call: String
     ) {
         this.name = name
@@ -27,6 +29,7 @@ public class RestaurantMenuItems {
         this.is_active = is_active
         this.is_added = is_added
         this.description = description
+        this.image = image
         this.call = call
     }
 
@@ -40,6 +43,15 @@ public class RestaurantMenuItems {
     fun setName(name: String) {
         this.name = name
     }
+
+    fun getImage(): String {
+        return image
+    }
+
+    fun setImage(image: String) {
+        this.image = image
+    }
+
     fun getCall(): String {
         return call
     }
@@ -87,6 +99,7 @@ public class RestaurantMenuItems {
     fun setIs_added(is_added: String) {
         this.is_added = is_added
     }
+
     fun getDescription(): String {
         return description
     }

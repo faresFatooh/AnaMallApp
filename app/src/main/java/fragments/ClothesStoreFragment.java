@@ -49,6 +49,7 @@ import models.RestaurantDetail;
 import ru.nikartm.support.ImageBadgeView;
 import ui.cart.CartItemActivity;
 import ui.cart.EmptyCartActivity;
+import ui.location.ChangeLocationActivity;
 import ui.main.MainRestaurantPageActivity;
 
 
@@ -98,9 +99,9 @@ public class ClothesStoreFragment extends Fragment {
         LinearLayout mAddressContainer = view.findViewById(R.id.addressContainer);
 
         mAddressContainer.setOnClickListener(view1 -> {
-//            Intent intent = new Intent(getActivity(), ChangeLocationActivity.class);
-//            intent.putExtra("INT", "ONE");
-//            startActivity(intent);
+            Intent intent = new Intent(getActivity(), ChangeLocationActivity.class);
+            intent.putExtra("INT", "ONE");
+            startActivity(intent);
         });
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
         mCurrentUser = mAuth.getCurrentUser();

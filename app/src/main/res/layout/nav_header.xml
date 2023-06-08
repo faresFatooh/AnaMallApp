@@ -60,17 +60,19 @@
 
 
     </LinearLayout>
+
     <TextView
         android:id="@+id/mns"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/select_source"
+        android:layout_gravity="center_vertical"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:layout_gravity="center_vertical"
-        android:textColor="@color/white"
         android:fontFamily="@font/open_sans_bold"
+        android:text="@string/select_source"
+        android:textColor="@color/white"
         android:textStyle="bold"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

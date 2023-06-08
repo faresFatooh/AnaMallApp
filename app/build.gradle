@@ -63,6 +63,8 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
+
+
     //External Libraries
     implementation 'com.github.aabhasr1:OtpView:v1.1.2' //OTP
     implementation 'com.hbb20:ccp:2.4.0' //Country Code Picker
@@ -78,6 +80,8 @@ dependencies {
     implementation('com.paytm:pgplussdk:1.4.4') {//Paytm Gateway Integration
         transitive = true;
     }
+    implementation 'com.github.smarteist:autoimageslider:1.4.0'
+
     implementation 'com.mapbox.mapboxsdk:mapbox-android-sdk:9.2.0'//MapBox
     implementation 'com.mapbox.mapboxsdk:mapbox-android-navigation:0.42.6'//MapBox Navigation
     implementation 'androidx.annotation:annotation:1.2.0'

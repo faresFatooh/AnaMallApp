@@ -1,28 +1,28 @@
-<androidx.core.widget.NestedScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="fragments.RestaurantsFragment">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <include layout="@layout/custom_toolbar"
-            android:id="@+id/toolBar2"/>
+        <include
+            android:id="@+id/toolBar2"
+            layout="@layout/custom_toolbar" />
 
         <TextView
             android:id="@+id/cuisineTextLabel2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="For you"
-            android:fontFamily="@font/open_sans_semibold"
             android:layout_below="@+id/toolBar2"
             android:layout_marginStart="12dp"
-            android:textSize="21sp"
+            android:fontFamily="@font/open_sans_semibold"
+            android:text="TOP 3"
             android:textColor="@color/colorAccent"
-            />
+            android:textSize="21sp" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/cuisineGridView2"
@@ -32,17 +32,46 @@
             android:layout_marginTop="7dp"
             android:overScrollMode="never" />
 
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card"
+            app:cardCornerRadius="6dp"
+            android:layout_margin="16dp"
+            android:layout_width="match_parent"
+            android:layout_below="@+id/cuisineGridView2"
+            android:layout_height="140dp">
+
+            <com.smarteist.autoimageslider.SliderView
+                android:id="@+id/imageSlider"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                app:sliderAnimationDuration="600"
+                app:sliderAutoCycleDirection="back_and_forth"
+                app:sliderAutoCycleEnabled="true"
+                app:sliderIndicatorAnimationDuration="600"
+                app:sliderIndicatorGravity="center_horizontal|bottom"
+                app:sliderIndicatorMargin="15dp"
+                app:sliderIndicatorOrientation="horizontal"
+                app:sliderIndicatorPadding="3dp"
+                app:sliderIndicatorRadius="2dp"
+                app:sliderIndicatorSelectedColor="#5A5A5A"
+                app:sliderIndicatorUnselectedColor="#FFF"
+                app:sliderScrollTimeInSec="1"
+                app:sliderStartAutoCycle="true" />
+
+        </androidx.cardview.widget.CardView>
+
         <TextView
             android:id="@+id/trendingTextView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/trending"
-            android:layout_below="@+id/cuisineGridView2"
-            android:layout_marginTop="21dp"
+            android:layout_below="@+id/card"
             android:layout_marginStart="12dp"
-            android:textColor="@color/colorAccent"
+            android:layout_marginTop="21dp"
             android:fontFamily="@font/open_sans_bold"
-            android:textSize="23sp"/>
+            android:text="@string/trending"
+            android:textColor="@color/colorAccent"
+            android:textSize="23sp" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/restaurant_recyclerView2"
